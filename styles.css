@@ -1,0 +1,119 @@
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+}
+.head {
+  position: absolute;
+  display: flex;
+  text-align: top;
+}
+.container {
+  position: relative;
+  text-align: center;
+}
+
+/* Imagen central */
+#central-image-container {
+  position: relative;
+  display: flex;
+}
+
+#central-image {
+  width: 178px;
+  height: 178px;
+  border-radius: 15%;
+  transition: opacity 1s ease;
+}
+
+/* Galería en cuadrícula */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.grid-vertical {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.thumbnail {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.thumbnail .open  {
+  display: block;
+}
+
+
+
+/* Modal */
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-image {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+#close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Mensaje final */
+#final-message {
+  display: none;
+  text-align: center;
+  position: absolute;
+}
+
+#final-message h1 {
+  font-size: 24px;
+  width: 178px;
+  height: 178px;
+  align-content: center;
+  color: #00ff00;
+}
