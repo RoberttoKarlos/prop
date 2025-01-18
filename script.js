@@ -41,16 +41,22 @@ closeModalBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-
-// Reproduce el primer audio al cargar la página
-audio1.play();
-
-// Evento: Cuando termina el primer audio, inicia el segundo
-audio1.addEventListener("ended", () => {
-  audio2.play();
-});
-
-// Evento: Cuando termina el segundo audio, vuelve al primero (bucle)
-audio2.addEventListener("ended", () => {
-  audio1.play();
-});
+// Función para reproducir audio
+function playAudio() {
+    audio1.play();
+    // Evento: Cuando termina el primer audio, inicia el segundo
+    audio1.addEventListener("ended", () => {
+      audio2.play();
+    });
+    // Evento: Cuando termina el segundo audio, vuelve al primero (bucle)
+    audio2.addEventListener("ended", () => {
+      audio1.play();
+    });
+  }
+  
+  // Inicia la reproducción de audio tras la interacción en cualquier parte
+  document.body.addEventListener("click", function startMusic() {
+    playAudio();
+    // Elimina este listener después de la primera interacción
+    document.body.removeEventListener("click", startMusic);
+  });

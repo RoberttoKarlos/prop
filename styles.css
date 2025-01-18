@@ -21,6 +21,23 @@ body {
   text-align: center;
 }
 
+header {
+  position: relative;
+  align-self: top;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #00ff00;
+}
+
+header p {
+  font-size: 16px;
+  color: #ccc;
+}
+
 /* Imagen central */
 #central-image-container {
   position: relative;
