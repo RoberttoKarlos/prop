@@ -3,7 +3,8 @@ const modal = document.getElementById("modal");
 const modalImage = document.getElementById("modal-image");
 const closeModalBtn = document.getElementById("close-btn");
 const centralImage = document.getElementById("central-image");
-const finalMessage = document.getElementById("final-message");
+const centralCover = document.getElementById("central-cover");
+const finalImage = document.getElementById("final-image");
 const audio1 = document.getElementById("audio1");
 const audio2 = document.getElementById("audio2");
 
@@ -28,12 +29,36 @@ thumbnails.forEach((thumbnail, index) => {
 
     // Verifica si todas las imágenes han sido vistas
     if (seenImages.size === thumbnails.length) {
-      setTimeout(() => {
-        centralImage.style.opacity = 0;
-        finalMessage.style.display = "block";
-      }, 10000); // Espera 10 segundo antes de mostrar el mensaje
+
+
+      let opacity = 1; // Inicializamos la opacidad en 1 (completamente visible)
+      
+      const fadeOut = setInterval(() => {
+        opacity -= 0.005; // Reducimos la opacidad en pequeños pasos (ajusta este valor según la velocidad deseada)
+        const inverseOpacity = 1 - opacity; // Incrementar la opacidad del segundo elemento
+        if (opacity <= 0) {
+          opacity = 0; // Asegúrate de que no sea menor a 0
+          centralImage.remove();
+          centralCover.remove();
+          clearInterval(fadeOut); // Detenemos el intervalo cuando la opacidad llegue a 0
+          
+                  // Opcional: Ocultamos el elemento completamente
+        }
+        centralImage.style.opacity = opacity; // Actualizamos la opacidad
+        finalImage.style.opacity = inverseOpacity; 
+      }, 25); // Intervalo de tiempo entre cada paso (ajusta según sea necesario)
+
+      
+
+
     }
   });
+});
+
+// Evento: Abrir modal con final-image
+finalImage.addEventListener("click", () => {
+  modalImage.src = finalImage.src;
+  modal.style.display = "flex";
 });
 
 // Evento: Cerrar modal

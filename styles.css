@@ -11,11 +11,7 @@ body {
   color: white;
   overflow: hidden;
 }
-.head {
-  position: absolute;
-  display: flex;
-  text-align: top;
-}
+
 .container {
   position: relative;
   text-align: center;
@@ -41,13 +37,26 @@ header p {
 #central-image-container {
   position: relative;
   display: flex;
+  width: 178px;
+  height: 178px;
+  border: none;
 }
 
 #central-image {
   width: 178px;
   height: 178px;
   border-radius: 15%;
-  transition: opacity 1s ease;
+  transition: opacity 3s ease;
+  position: absolute;
+}
+
+#final-image {
+  width: 178px;
+  height: 178px;
+  border-radius: 15%;
+  transition: opacity 3s ease;
+  position: absolute;
+  opacity: 0;
 }
 
 /* Galería en cuadrícula */
@@ -73,7 +82,7 @@ header p {
   border: 2px solid white;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 1.5s ease;
 }
 
 .thumbnail img {
