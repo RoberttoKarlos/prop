@@ -24,7 +24,7 @@ header {
 }
 
 header h1 {
-  font-size: 22px;
+  font-size: 20px;
   color: #ae00ff;
 }
 
@@ -46,7 +46,7 @@ header p {
   opacity: 0;
 }
 
-#answer-btn {
+.answer-btn {
   margin: 2px;
   padding: 7.5px 15px;
   background-color: white;

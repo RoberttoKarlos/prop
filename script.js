@@ -2,6 +2,8 @@ const thumbnails = document.querySelectorAll(".thumbnail");
 const modal = document.getElementById("modal");
 const modalImage = document.getElementById("modal-image");
 const closeModalBtn = document.getElementById("close-btn");
+const noBtn = document.getElementById("no-btn");
+const yesBtn = document.getElementById("yes-btn");
 const centralImage = document.getElementById("central-image");
 const centralCover = document.getElementById("central-cover");
 const finalImage = document.getElementById("final-image");
@@ -82,4 +84,16 @@ document.body.addEventListener("click", function startMusic() {
   playAudio();
   // Elimina este listener después de la primera interacción
   document.body.removeEventListener("click", startMusic);
+});
+
+
+//Botones si y no
+
+noBtn.addEventListener("click", () => {
+  modalImage.src = "img/no.gif";
+  modal.style.display = "flex";
+});
+yesBtn.addEventListener("click", () => {
+  modalImage.src = "img/yes.gif";
+  modal.style.display = "flex";
 });
